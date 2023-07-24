@@ -32,8 +32,6 @@ app.use('/', routes)
 
 const mysql = require('mysql2')
 const multer = require('multer')
-const fs = require('fs')
-const path = require('path')
 
 const upload = multer({ dest: 'uploads/' })
 const constants = require('./constants/constants')
@@ -66,7 +64,7 @@ app.post('/api/uploadSql', upload.single('sqlFile'), (req, res) => {
   executeSqlFile(filePath)
     .then(() => {
       res.sendStatus(200)
-      console.log('1qqqqqq',)
+      console.log('1qqqqqq')
     })
     .catch((error) => {
       res.status(500).json({ error: 'Error updating table', details: error.message })
