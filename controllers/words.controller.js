@@ -53,6 +53,13 @@ class WordsController {
         if (result) return res.status(200).send(result)
         else return res.status(500).send({ message: 'error.' })
     }
+
+    async updateTable(req, res) {
+        const result = await WordsService.updateTable(req, res)
+
+        if (result) return res.status(200).send(result)
+        else return res.status(500).send({ message: 'error.' })
+    }
 }
 
 module.exports = new WordsController()

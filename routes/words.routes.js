@@ -4,10 +4,14 @@ const WordController = require('../controllers/words.controller')
 
 router.route('/').get(WordController.getWordsStartPage)
 
+
+
+
 router
     .route('/:table')
     .get(WordController.getWords)
     .post(WordController.createWord)
+    .post(WordController.updateTable)
     .delete(WordController.deleteTable)
 
 router
