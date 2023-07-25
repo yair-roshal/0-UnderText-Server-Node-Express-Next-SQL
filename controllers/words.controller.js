@@ -17,11 +17,10 @@ class WordsController {
 
     async getWords(req, res) {
        
-        console.log('req3333', req.url)
-        
+        console.log('getWords_controller_req.url', req.url)
         const result = await WordsService.getWords(req, res)
-
-        console.log('result555', result)
+        console.log('getWords_controller_result555', result)
+        
         if (result) return res.status(200).send(result)
         else return res.status(500).send({ message: 'error.' })
     }

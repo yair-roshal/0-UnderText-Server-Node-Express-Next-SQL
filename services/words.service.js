@@ -79,8 +79,7 @@ class WordsService {
 
   async getWords(table) {
     
-    console.log('table1111', table.url)
-    console.log('table.url', table.url)
+     console.log('table.url', table.url)
     
     
     const tableName = table.url.slice(1);
@@ -89,6 +88,7 @@ class WordsService {
 
     try {
       const results = await this.runQuery(sqlQuery);
+      console.log('results', !!results);
       return results;
     } catch (error) {
       console.error('Error executing SQL query:', error);
