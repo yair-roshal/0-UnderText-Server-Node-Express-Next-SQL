@@ -6,7 +6,6 @@ const routes = require('./routes/index')
 const bodyParser = require('body-parser')
 const cors = require('cors')
 const host = process.env.HOST
-const port = process.env.PORT || 5000
 
 var https = require('https')
 var fs = require('fs')
@@ -76,7 +75,9 @@ app.post('/api/uploadSql', upload.single('sqlFile'), (req, res) => {
 
 //===============================
 
-// Create an HTTPS server and listen on port 443
-https.createServer(httpsOptions, app).listen(443, () => {
-  console.log('https Web server started at port : ', 443)
+const port =   80
+// const port = process.env.PORT || 80
+
+https.createServer(httpsOptions, app).listen(port, () => {
+  console.log('https Web server started at port : ', port)
 })
