@@ -75,9 +75,13 @@ app.post('/api/uploadSql', upload.single('sqlFile'), (req, res) => {
 
 //===============================
 
-const port =   80
+const port = 80
 // const port = process.env.PORT || 80
 
-https.createServer(httpsOptions, app).listen(port, () => {
-  console.log('https Web server started at port : ', port)
+// https.createServer(httpsOptions, app).listen(port, () => {
+//   console.log('https Web server started at port : ', port)
+// })
+
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`)
 })
