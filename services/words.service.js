@@ -53,7 +53,7 @@ class WordsService {
   async getWordsStartPage() {
     console.log('get all from words _ getWordsStartPage');
 
-    const tableName = 'maariv_3';
+    const tableName = 'maariv';
     const sqlQuery = `SELECT * from ${tableName}`;
 
     try {
