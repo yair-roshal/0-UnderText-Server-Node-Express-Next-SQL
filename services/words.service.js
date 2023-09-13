@@ -54,12 +54,11 @@ class WordsService {
     console.log('get all from words _ getWordsStartPage')
 
     const tableName = 'maariv'
-
     const sqlQuery = `SELECT * from ${tableName}`
 
     try {
       const results = await this.runQuery(sqlQuery)
-      console.log(results)
+      // console.log(results)
       return results
     } catch (error) {
       console.error('Error executing SQL query:', error)
